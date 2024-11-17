@@ -1,0 +1,49 @@
+.categoryContainer {
+    text-align: center;
+  }
+  
+  .categoryBoxes {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .categoryBox {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 120px;
+  
+    input {
+      display: none;
+    }
+  
+    span {
+      display: block;
+      font-weight: bold;
+    }
+  
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  
+    &.selected {
+      background-color: #4caf50;
+      color: white;
+      border-color: #4caf50;
+  
+      span {
+        color: white;
+      }
+    }
+  
+    input:checked + span {
+      color: white;
+    }
+  }
+  
