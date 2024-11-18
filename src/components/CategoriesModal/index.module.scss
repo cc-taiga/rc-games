@@ -1,0 +1,79 @@
+@import '../../styles/main.scss';
+
+.hideMainCont {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: #ffffff;
+  z-index: 1000;
+  justify-content: center;
+  align-items: flex-end;
+  transition: bottom 0.7s ease-in-out;
+  padding: size(10);
+}
+
+.showModal {
+  bottom: 0;
+}
+
+.gameList {
+  height: 92%;
+  width: 100%;
+  overflow-x: auto;
+  margin-top: size(50);
+  margin-left: size(-10);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  place-items: center;
+}
+
+.titleCont {
+  position: fixed;
+  background-color: $primary-color;
+  width: calc(100vw - size(40));
+  display: flex;
+  height: size(30);
+  justify-content: space-between;
+  align-items: center;
+  padding: size(10) size(20);
+  color: #ede4e4;
+  size: size(20);
+  font-weight: bold;
+  margin: size(-10) 0 0 size(-10);
+
+  svg {
+    width: size(31.5);
+    height: size(33);
+
+    path {
+      fill: #ede4e4;
+    }
+  }
+}
+
+.titleText {
+  width: 100%;
+  padding-left: size(20);
+}
+
+.gameItem {
+  width: size(146);
+  height: size(60);
+  border: 2px solid $text-color;
+  border-radius: size(10);
+
+  img {
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.activeGameItem {
+  border: 2px solid $primary-color;
+}

@@ -1,7 +1,9 @@
-// src/components/GameItem.tsx
-
 import React from 'react';
 import { Game } from '../../types/game-types';
+import styles from './index.module.scss';
+import { getAllAssets } from '../../utils/assetsUtils';
+import classNames from 'classnames';
+import { ReactComponent as StarSvg } from '../../assets/game_list/fave.svg';
 
 interface GameItemProps {
   game: Game;
@@ -9,16 +11,23 @@ interface GameItemProps {
 }
 
 const GameItem: React.FC<GameItemProps> = ({ game, handleFavoriteToggle }) => {
+  const assets = getAllAssets('game_list')
   return (
-    <div style={{ border: '1px solid #ddd', padding: '10px', margin: '10px' }}>
-      <h3>{game.name}</h3>
-      <p>Category: {game.category}</p>
-      <p>Provider: {game.provider}</p>
-      <button onClick={() => handleFavoriteToggle(game.id)}>
-        {game.isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
-      </button>
+    <div className={styles.mainCont}>
+      <div className={styles.gameItemCont}>
+        <img src={assets[game.name]} alt="" />
+        <div className={styles.triangle}></div>
+        <div className={styles.fave} onClick={() => handleFavoriteToggle(game.id)}>
+          <div className={classNames(styles.star, {
+            [styles.favorite]: game.isFavorite
+          }
+          )}>
+            <div className={styles.starCont}><StarSvg /></div>
+          </div>
+        </div>
+      </div >
     </div>
   );
 };
 
-export default GameItem;
+export default React.memo(GameItem);

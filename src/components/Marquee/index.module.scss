@@ -1,0 +1,43 @@
+@import '../../styles/main.scss';
+
+.marqueeMainCont {
+  display: flex;
+}
+
+.marqueeCont {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: size(12);
+  svg {
+    width: size(25.5);
+    height: size(25.5);
+  }
+}
+
+.marquee {
+  width: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: size(15);
+  padding: size(10);
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(70%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  animation: slide-left 8s linear infinite;
+}

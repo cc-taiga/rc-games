@@ -1,49 +1,81 @@
-.categoryContainer {
-    text-align: center;
-  }
-  
-  .categoryBoxes {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-  }
-  
-  .categoryBox {
-    display: inline-block;
-    background-color: #f0f0f0;
-    padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    width: 120px;
-  
-    input {
-      display: none;
-    }
-  
-    span {
-      display: block;
-      font-weight: bold;
-    }
-  
-    &:hover {
-      background-color: #e0e0e0;
-    }
-  
-    &.selected {
-      background-color: #4caf50;
-      color: white;
-      border-color: #4caf50;
-  
-      span {
-        color: white;
-      }
-    }
-  
-    input:checked + span {
-      color: white;
+@import '../../styles/main.scss';
+
+.gameList {
+  width: 100%;
+}
+.upperCont {
+  display: flex;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-right: size(8);
+  // position: fixed;
+  // top: size(261);
+  svg {
+    path {
+      stroke: rgb(136, 136, 136);
     }
   }
+}
+
+.search::after {
+  content: '';
+  position: absolute;
+  height: size(30);
+  width: size(1);
+  background-color: $text-color;
+  right: 0;
+}
+
+.searchActive {
+  color: $primary-color;
+  svg {
+    path {
+      stroke: $primary-color;
+    }
+  }
+}
+
+.text {
+  width: size(80);
+  text-align: center;
+}
+
+.middleCont {
+  display: flex;
+}
+
+.gpBtn {
+  width: calc(100% - size(15));
+  height: calc(size(80) - size(30));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $text-color;
+  margin: size(15) size(10) size(15) size(5);
+  border-radius: size(7);
   
+  svg {
+    path {
+      fill: $text-color;
+    }
+  }
+}
+
+.gameItemMainCont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  place-items: center;
+  height: calc(100vh - size(461));
+  overflow: auto;
+}
+
+.maintContSearchOpen {
+  height: calc(100vh - size(543));
+}

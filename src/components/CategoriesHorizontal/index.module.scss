@@ -1,0 +1,48 @@
+@import '../../styles/main.scss';
+
+.categoryContainer {
+  width: calc(100vw - size(96));
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.categoryBoxes {
+  width: 100%;
+  height: size(60);
+  display: flex;
+  flex-direction: row;
+}
+
+.categoryItem {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    path {
+      fill: rgb(136, 136, 136);
+    }
+  }
+}
+
+.active {
+  color: $primary-color;
+  svg {
+    path {
+      fill: $primary-color;
+    }
+  }
+}
+
+.categoryName {
+  width: size(70);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.biggerCont {
+  width: size(100);
+}

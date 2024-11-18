@@ -1,24 +1,46 @@
 import React, { useState, useEffect } from 'react';
-
-const images = [
-  'https://via.placeholder.com/800x300?text=Banner+1',
-  'https://via.placeholder.com/800x300?text=Banner+2',
-  'https://via.placeholder.com/800x300?text=Banner+3',
-];
+import styles from './index.module.scss';
+import { getAllAssets } from '../../utils/assetsUtils';
 
 const BannerCarousel: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const assets = getAllAssets('banner');
+  let keys = Object.keys(assets);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+      const isLastIndex = keys.length === (currentImageIndex + 1);
 
+      if (isLastIndex) {
+        setCurrentImageIndex(0);
+      } else {
+        setCurrentImageIndex((prev) => prev + 1);
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [currentImageIndex, keys.length]);
   return (
-    <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-      <img src={images[currentImageIndex]} alt={`Banner ${currentImageIndex + 1}`} style={{ width: '800px', height: '300px' }} />
+    <div className={styles.bannerMainCont}>
+      <div className={styles.banner}>
+        <div
+          className={styles.bannerImages}
+          style={{
+            transform: `translateX(-${currentImageIndex * 100}vw)`
+          }}
+        >
+          {keys.map((key, index) => (
+            <div className={styles.bannerImgCont}>
+              <img
+                key={index}
+                src={assets[key]}
+                alt={`Banner ${index + 1}`}
+                className={styles.bannerImage}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

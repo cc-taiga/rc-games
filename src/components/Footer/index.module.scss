@@ -1,0 +1,36 @@
+@import '../../styles/main.scss';
+
+.footerMainCont {
+  height: size(80);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerImgCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  svg {
+    path {
+      fill: rgb(136, 136, 136);
+    }
+  }
+}
+
+.selected {
+  color: $primary-color;
+
+  svg {
+    path {
+      fill: $primary-color;
+    }
+  }
+}

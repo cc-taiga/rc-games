@@ -1,0 +1,66 @@
+import { Game } from '../types/game-types';
+import game_providers from '../utils/game_providers';
+
+export const fetchGames = (): Promise<Game[]> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([
+          { id: 1, name: 'anaconda_wild_2', category: ['START', 'SLOTS'], provider: 'HACKSAW', isFavorite: false },
+          { id: 2, name: 'azteca', category: ['NEW', 'TABLE GAMES'], provider: 'EM', isFavorite: false },
+          { id: 3, name: 'beach_life', category: ['SLOTS', 'LIVE'], provider: 'EXPASE', isFavorite: false },
+          { id: 4, name: 'big_bad_wolf', category: ['START', 'NEW'], provider: 'RELAX', isFavorite: false },
+          { id: 5, name: 'book_of_egypt', category: ['NEW', 'SLOTS'], provider: 'EVO', isFavorite: false },
+          { id: 6, name: 'crocodile_blitz', category: ['SLOTS', 'SPORTS'], provider: 'PRAGMATICPLAY', isFavorite: false },
+          { id: 7, name: 'inca_jackpot', category: ['START', 'JACKPOTS'], provider: 'NETENT', isFavorite: false },
+          { id: 8, name: 'maya_jackpot', category: ['NEW', 'BINGO'], provider: 'GAMEART', isFavorite: false },
+          { id: 9, name: 'pirates_power', category: ['START', 'TABLE GAMES'], provider: 'HAB', isFavorite: false },
+          { id: 10, name: 'pride_of_persia', category: ['SLOTS', 'NEW'], provider: 'INBET', isFavorite: false },
+          { id: 11, name: 'shaolin_crew', category: ['START', 'BINGO'], provider: 'NETENT', isFavorite: false },
+          { id: 12, name: 'sugar_rush', category: ['NEW', 'TABLE GAMES'], provider: 'PGSOFT', isFavorite: false },
+          { id: 13, name: 'anaconda_wild_2', category: ['NEW', 'SLOTS'], provider: 'PNG', isFavorite: false },
+          { id: 14, name: 'azteca', category: ['SLOTS', 'START'], provider: 'PP', isFavorite: false },
+          { id: 15, name: 'beach_life', category: ['START', 'SLOTS'], provider: 'PRAGMATICPLAY', isFavorite: false },
+          { id: 16, name: 'big_bad_wolf', category: ['NEW', 'LIVE'], provider: 'RELAX', isFavorite: false },
+          { id: 17, name: 'book_of_egypt', category: ['SLOTS', 'START'], provider: 'EM', isFavorite: false },
+          { id: 18, name: 'crocodile_blitz', category: ['START', 'SPORTS'], provider: 'EVO', isFavorite: false },
+          { id: 19, name: 'inca_jackpot', category: ['SLOTS', 'JACKPOTS'], provider: 'EXPASE', isFavorite: false },
+          { id: 20, name: 'maya_jackpot', category: ['NEW', 'BINGO'], provider: 'HACKSAW', isFavorite: false },
+          { id: 21, name: 'pirates_power', category: ['START', 'SLOTS'], provider: 'GAMEART', isFavorite: false },
+          { id: 22, name: 'pride_of_persia', category: ['NEW', 'LIVE'], provider: 'NETENT', isFavorite: false },
+          { id: 23, name: 'shaolin_crew', category: ['SLOTS', 'BINGO'], provider: 'INBET', isFavorite: false },
+          { id: 24, name: 'sugar_rush', category: ['START', 'JACKPOTS'], provider: 'PGSOFT', isFavorite: false },
+          { id: 25, name: 'anaconda_wild_2', category: ['NEW', 'SPORTS'], provider: 'PNG', isFavorite: false },
+          { id: 26, name: 'azteca', category: ['SLOTS', 'TABLE GAMES'], provider: 'PP', isFavorite: false },
+          { id: 27, name: 'beach_life', category: ['START', 'SLOTS'], provider: 'PRAGMATICPLAY', isFavorite: false },
+          { id: 28, name: 'big_bad_wolf', category: ['NEW', 'JACKPOTS'], provider: 'RELAX', isFavorite: false },
+          { id: 29, name: 'book_of_egypt', category: ['SLOTS', 'LIVE'], provider: 'EM', isFavorite: false },
+          { id: 30, name: 'crocodile_blitz', category: ['START', 'SLOTS'], provider: 'EVO', isFavorite: false },
+          { id: 31, name: 'inca_jackpot', category: ['SLOTS', 'START'], provider: 'EXPASE', isFavorite: false },
+          { id: 32, name: 'maya_jackpot', category: ['NEW', 'BINGO'], provider: 'HAB', isFavorite: false },
+          { id: 33, name: 'pirates_power', category: ['START', 'SLOTS'], provider: 'GAMEART', isFavorite: false },
+          { id: 34, name: 'pride_of_persia', category: ['SLOTS', 'NEW'], provider: 'NETENT', isFavorite: false },
+          { id: 35, name: 'shaolin_crew', category: ['START', 'LIVE'], provider: 'INBET', isFavorite: false },
+          { id: 36, name: 'sugar_rush', category: ['NEW', 'JACKPOTS'], provider: 'PGSOFT', isFavorite: false },
+          { id: 37, name: 'anaconda_wild_2', category: ['START', 'SPORTS'], provider: 'PNG', isFavorite: false },
+          { id: 38, name: 'azteca', category: ['NEW', 'BINGO'], provider: 'PP', isFavorite: false },
+          { id: 39, name: 'beach_life', category: ['START', 'JACKPOTS'], provider: 'PRAGMATICPLAY', isFavorite: false },
+          { id: 40, name: 'big_bad_wolf', category: ['NEW', 'SLOTS'], provider: 'RELAX', isFavorite: false },
+          { id: 41, name: 'book_of_egypt', category: ['SLOTS', 'START'], provider: 'EM', isFavorite: false },
+          { id: 42, name: 'crocodile_blitz', category: ['START', 'BINGO'], provider: 'EVO', isFavorite: false },
+          { id: 43, name: 'inca_jackpot', category: ['SLOTS', 'JACKPOTS'], provider: 'EXPASE', isFavorite: false },
+          { id: 44, name: 'maya_jackpot', category: ['NEW', 'LIVE'], provider: 'HAB', isFavorite: false },
+          { id: 45, name: 'pirates_power', category: ['START', 'SLOTS'], provider: 'GAMEART', isFavorite: false },
+          { id: 46, name: 'pride_of_persia', category: ['NEW', 'SPORTS'], provider: 'NETENT', isFavorite: false },
+          { id: 47, name: 'shaolin_crew', category: ['START', 'TABLE GAMES'], provider: 'INBET', isFavorite: false },
+          { id: 48, name: 'sugar_rush', category: ['NEW', 'JACKPOTS'], provider: 'PGSOFT', isFavorite: false },
+          { id: 49, name: 'anaconda_wild_2', category: ['START', 'SLOTS'], provider: 'PNG', isFavorite: false },
+          { id: 50, name: 'azteca', category: ['NEW', 'SLOTS'], provider: 'PP', isFavorite: false },
+          { id: 51, name: 'beach_life', category: ['START', 'LIVE'], provider: 'PRAGMATICPLAY', isFavorite: false },
+          { id: 52, name: 'big_bad_wolf', category: ['NEW', 'JACKPOTS'], provider: 'RELAX', isFavorite: false },
+          { id: 53, name: 'book_of_egypt', category: ['SLOTS', 'START'], provider: 'EM', isFavorite: false },
+          { id: 54, name: 'crocodile_blitz', category: ['START', 'LIVE'], provider: 'EVO', isFavorite: false },
+          { id: 55, name: 'inca_jackpot', category: ['SLOTS', 'NEW'], provider: 'EXPASE', isFavorite: false }
+      ]);
+    }, 3000);
+  });
+};

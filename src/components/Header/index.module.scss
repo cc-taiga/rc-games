@@ -1,0 +1,67 @@
+@import '../../styles/main.scss';
+
+.headerMainCont {
+  width: 100%;
+  height: size(50);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1), 0 0 #0000, (0 0 #0000, 0 0 #0000), 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);
+  // position: fixed;
+  // top: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+
+.rightCont {
+  height: 100%;
+  width: size(140);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.leftCont {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: size(8);
+}
+
+
+.menu {
+  width: size(17);
+  height: size(17);
+}
+
+.logo {
+  width: size(93);
+  height: size(21);
+}
+
+.wallet {
+  height: size(19);
+  width: size(20);
+}
+
+.money {
+  height: 100%;
+  width: size(90);
+  font-weight: bold;
+  color: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userIcon {
+  width: size(20);
+}
