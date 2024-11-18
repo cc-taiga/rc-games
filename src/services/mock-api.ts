@@ -61,6 +61,6 @@ export const fetchGames = (): Promise<Game[]> => {
           { id: 54, name: 'crocodile_blitz', category: ['START', 'LIVE'], provider: 'EVO', isFavorite: false },
           { id: 55, name: 'inca_jackpot', category: ['SLOTS', 'NEW'], provider: 'EXPASE', isFavorite: false }
       ]);
-    }, 3000);
+    }, 1000);
   });
 };

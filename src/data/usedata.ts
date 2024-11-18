@@ -37,7 +37,7 @@ export const useData = () => {
     if (selectedCategory) {
       games = allGames.filter((game) => (game.category).includes(selectedCategory.toUpperCase()));
       if (selectedProvider) {
-        if (selectedProvider !== 'All Providers') {
+        if (selectedProvider !== 'NothingSelected') {
           games = games.filter((game) => game.provider === selectedProvider);
         }
       }

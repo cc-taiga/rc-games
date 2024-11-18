@@ -34,7 +34,7 @@ const CategoriesModal: React.FC<CategoriesModalProps> = ({ providers, selectedPr
             className={classNames(styles.gameItem, {
             [styles.activeGameItem] : provider === selectedProvider.toLocaleUpperCase()
             })}
-            onClick={() => changeProvider(provider)}
+            onClick={() => changeProvider(provider === selectedProvider.toLocaleUpperCase() ? "NothingSelected" : provider)}
           >
             <img src={assets[provider]} alt="" />
           </div>
